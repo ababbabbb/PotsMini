@@ -1,0 +1,29 @@
+<!--pages/startForm/startForm.wxml-->
+<view class='table'>
+  <!-- 左侧固定 -->
+  <view class='table_left_column'>
+    <view class='left_col_item'>排班</view>
+    <view class='left_col_item' style="height:{{timeHeight1}}px">上午</view>
+    <view class='left_col_item' style="height:{{timeHeight2}}px">下午</view>
+    <view class='left_col_item' style="height:{{timeHeight3}}px">晚上</view>
+  </view>
+  <!-- 右侧表格滚动 -->
+  <view class="table_right_scroll_box">
+    <block wx:for="{{list}}" wx:for-index="index" wx:key="index">
+      <view class='table_tr_item tableRow{{index}}'>
+        <block wx:for="{{item.data}}" wx:for-item="ditem" wx:for-index="dindex" wx:key="dindex">
+          <view wx:if="{{index == 0}}" class='tr_th tr_td'> 
+            <view class="">{{ditem.date}}</view>
+            <view class="">{{ditem.day}}</view>
+          </view>
+          <view wx:else class='tr_td'>
+            <block wx:for="{{ditem.userList}}" wx:for-item="uitem" wx:for-index="uindex" wx:key="uindex">
+              <view class="tr_td_row">{{uitem.name}}</view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>
+

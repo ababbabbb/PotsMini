@@ -1,0 +1,6 @@
+<!--pages/index/index.wxml-->
+<view>
+    <view wx:for="{{projects}}" class="container">
+        <tree text="{{item}}" project="{{item}}"></tree>>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<!--pages/home/home.wxml-->
+<view>
+    <view bindtap="login">
+        <image src="{{icon}}"/>
+        <text>{{name}}</text>
+    </view>
+</view>
+<view>
+    <text>待设计</text>
+</view>
